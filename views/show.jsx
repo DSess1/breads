@@ -1,5 +1,5 @@
 const React = require('react')
-const Default = require('../layouts/Default')
+const Default = require('../layouts/default')
 
 //Adding data to our view
 function Show ({bread}) {
@@ -22,6 +22,11 @@ function Show ({bread}) {
         <li><a href="/breads">Go home</a></li>
       </Default>
       
+
+
+
+
+
       )
   }
 
