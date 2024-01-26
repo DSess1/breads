@@ -13,6 +13,9 @@ app.engine('jsx', require('express-react-views').createEngine())
 // MIDDLEWARE
 app.use(express.static('public'))//static folder named public
 
+// MIDDLEWARE
+app.use(express.urlencoded({extended: true}))
+
 
 app.get('/', (req, res) =>
 {
