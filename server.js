@@ -22,6 +22,8 @@ app.get('/', (req, res) =>
     res.send('Welcome to an Awesome app about Breads')
 });
 
+
+//Breads
 app.use('/breads', require('./controllers/breads_controller'))
 
 // 404 Page
