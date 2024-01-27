@@ -28,7 +28,7 @@ app.use('/breads', require('./controllers/breads_controller'))
 
 // 404 Page
 app.get('*', (req, res) => {
-    res.send('404')
+    res.send('error404')
   })
   
 //Listen for Connections
