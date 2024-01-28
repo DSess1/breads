@@ -3,13 +3,13 @@ const Default = require('./layouts/default')
 
 function Index({breads, title}) {
    return (
-       <Default>
+       <Default title={title}>
            <h2>Index Page</h2>
            <ul>
                {
                    breads.map((bread, index) => {
                     return(
-                        <li key={index}>
+                        <li key={index}>  
                             <a>href={`/breads/${index}`}
                                {bread.name}
                             </a>

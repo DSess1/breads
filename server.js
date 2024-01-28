@@ -1,5 +1,8 @@
+
+//DEPENDENCIES
 const express = require('express')
 
+//CONFIGURATION
 require('dotenv').config()
 const PORT = process.env.PORT
 const app = express()
@@ -16,7 +19,7 @@ app.use(express.static('public'))//static folder named public
 // MIDDLEWARE
 app.use(express.urlencoded({extended: true}))
 
-
+//ROUTES
 app.get('/', (req, res) =>
 {
     res.send('Welcome to an Awesome app about Breads')
