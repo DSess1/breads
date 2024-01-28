@@ -2,7 +2,7 @@ const React = require('react')
 const Default = require('./layouts/default')
 
 //Adding data to our view
-function Show ({bread}) {
+function Show ({bread, index}) {
     // Confirm we are getting our bread data in the terminal.
     // console.log(bread.name)
       return (

@@ -8,7 +8,7 @@ const Bread = require('../models/bread.js')
 
 // INDEX
 breads.get('/', (req, res) => {
-  res.render('Index',
+  res.render('index',
     {
       breads: Bread,
       title: 'Index Page'
@@ -23,20 +23,17 @@ breads.get('/new', (req, res) => {
   res.render('new')
 })
 
-
-
 // SHOW
 breads.get('/:arrayIndex', (req, res) => {
-    if (Bread[req.params.arrayIndex]) {
-      res.render('Show', {
-        bread:Bread[req.params.arrayIndex]
-      })
-    } else {
-      res.render('error404')
-    }
-  })
-   
-  
+  if (Bread[req.params.arrayIndex]) {
+    res.render('Show', {
+      bread:Bread[req.params.arrayIndex],
+      index: req.params.arrayIndex,
+    })
+  } else {
+    res.render('error404')
+  }
+})
 
 
 // CREATE
