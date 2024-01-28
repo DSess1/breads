@@ -27,14 +27,21 @@ function New () {
           />
           <br />
           <input type="submit"/>
-        </form>
+
+
+      {/* Button added here */}
+          <div className="backButton">
+            <a href="/breads"><button>Go back to the index</button></a>
+          </div>
+       </form>
       </Default>
+    
+
+  
     )
 }
 
-<div className="backButton">
-  <a href="/breads"><button>Go back to the index</button></a>
-</div>
+
 
 
 module.exports = New
