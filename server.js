@@ -1,12 +1,6 @@
-
-const mongoose = require('mongoose')
-  
 //DEPENDENCIES
 const express = require('express')
-
-
-
-// DEPENDENCIES
+const mongoose = require('mongoose')
 const methodOverride = require('method-override')
 
 
@@ -23,23 +17,19 @@ app.engine('jsx', require('express-react-views').createEngine())
 
 // MIDDLEWARE
 app.use(methodOverride('_method'))
-
-
-// MIDDLEWARE
 app.use(express.static('public'))//static folder named public
-
-// MIDDLEWARE
 app.use(express.urlencoded({extended: true}))
 
 //ROUTES
 app.get('/', (req, res) =>
 {
     res.send('Welcome to an Awesome app about Breads')
-});
+})
 
 
 //Breads
-app.use('/breads', require('./controllers/breads_controller'))
+const breadsController= require('./controllers/breads_controller.js')
+app.use('/breads', breadsController)
 
 // error404 Page
 app.get('*', (req, res) => {

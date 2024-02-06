@@ -5,7 +5,8 @@ function New () {
     return (
       <Default>
         <h2>Add a new bread</h2>
-        <form action="/breads" method="POST">
+         <form action="/breads" method="POST">
+         
           <label htmlFor="name">Name</label>
           <input
             type="text"
@@ -29,8 +30,6 @@ function New () {
           />
           <br />
           <input type="submit"/>
-
-
       {/* Button added here */}
           <div className="backButton">
             <a href="/breads"><button>Go back to the index</button></a>
