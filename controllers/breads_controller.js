@@ -24,14 +24,14 @@ breads.post('/', (req, res) => {
 breads.get('/', (req, res) => {
   Bread.find()
       .then(foundBreads => {
-          console.log(foundBreads)
           res.render('index', {
-             breads: foundBreads,
+              breads: foundBreads,
               title: 'Index Page'
-         })
-        
+          })
       })
 })
+
+
 
 
 
@@ -54,16 +54,19 @@ breads.get('/:indexArray/edit', (req, res) => {
 
 
 // SHOW
-breads.get('/:arrayIndex', (req, res) => {
-  if (Bread[req.params.arrayIndex]) {
-    res.render('Show', {
-      bread:Bread[req.params.arrayIndex],
-      index: req.params.arrayIndex,
+breads.get('/:id', (req, res) => {
+  Bread.findById(req.params.id)
+    .then(foundBread => {
+      res.render('show', {
+        bread: foundBread
+      })
     })
-  } else {
-    res.render('error404')
-  }
+    .catch(err => {
+      res.send('404')
+    })
 })
+
+
 
 
  // UPDATE
@@ -79,9 +82,11 @@ breads.put('/:arrayIndex', (req, res) => {
 
 
   // DELETE
-breads.delete('/:indexArray', (req, res) => {
-  Bread.splice(req.params.indexArray, 1)
-  res.status(303).redirect('/breads')
+breads.delete('/:id', (req, res) => {
+  Bread.findByIdAndDelete(req.params.id) 
+    .then(deletedBread => { 
+      res.status(303).redirect('/breads')
+    })
 })
 
 module.exports = breads

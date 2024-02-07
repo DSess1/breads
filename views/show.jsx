@@ -22,10 +22,12 @@ function Show ({bread, index}) {
            {/* Delete form added here */}
         <form action={`/breads/${index}?_method=DELETE`} method="POST">
           <input type='submit' value="DELETE"/>
-          <li><a href={`/breads/${bread.id}/edit`}><button>Edit</button></a></li>  
+          <li><a href={`/breads/${bread.id}/edit`}><button>Edit</button></a></li> 
+          <li><a href={`/breads/${bread.id}/edit`}><button>Edit</button></a></li>
         </form>
 
-      {/*  <li><a href={`/breads/${bread.id}/edit`}><button>Edit</button></a></li> */}
+        {/*<li><a href={`/breads/${bread.id}/edit`}><button>Edit</button></a></li>*/}
+
       </Default>
       
     )
