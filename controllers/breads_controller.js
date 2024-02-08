@@ -3,6 +3,18 @@ const breads = express.Router()
 const Bread = require('../models/bread.js')
 
 
+// somewhere at the top with the other dependencies 
+const Baker = require('../models/baker.js')
+
+// in the new route
+breads.get('/new', (req, res) => {
+    Baker.find()
+        .then(foundBakers => {
+            res.render('new', {
+                bakers: foundBakers
+            })
+      })
+})
 
 
 //CREATE
@@ -43,7 +55,7 @@ breads.get('/new', (req, res) => {
 // EDIT
 breads.get('/:id/edit', (req, res) => {
   Bread.findById(req.params.id)
-   res.render .then(foundBread => {
+   .then(foundBread => {
        res.render('/edit', {
         bread: foundBread
       })

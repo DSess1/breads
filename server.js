@@ -20,6 +20,21 @@ app.use(methodOverride('_method'))
 app.use(express.static('public'))//static folder named public
 app.use(express.urlencoded({extended: true}))
 
+
+
+
+// breads
+const breadsControllers = require('./controllers/breads_controller.js')
+app.use('/breads', breadsControllers)
+
+// bakers 
+const bakersControllers = require('./controllers/bakers_controller.js')
+app.use('/bakers', bakersControllers)
+
+// 404 Page
+app.get('*', (req, res) => {
+  res.send('404')
+
 //ROUTES
 app.get('/', (req, res) =>
 {
@@ -27,17 +42,6 @@ app.get('/', (req, res) =>
 })
 
 
-// breads
-const breadsController = require('./controllers/breads_controller.js')
-app.use('/breads', breadsController)
-
-// bakers 
-const bakersController = require('./controllers/bakers_controller.js')
-app.use('/bakers', bakersController)
-
-// 404 Page
-app.get('*', (req, res) => {
-  res.send('404')
 })
 
 
