@@ -4,7 +4,6 @@ const mongoose = require('mongoose')
 const { Schema } = mongoose
 
 //schema
-
 const breadSchema = new Schema({
   name: { type: String, required: true },
   hasGluten: Boolean,

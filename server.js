@@ -27,14 +27,19 @@ app.get('/', (req, res) =>
 })
 
 
-//Breads
-const breadsController= require('./controllers/breads_controller.js')
+// breads
+const breadsController = require('./controllers/breads_controller.js')
 app.use('/breads', breadsController)
 
-// error404 Page
+// bakers 
+const bakersController = require('./controllers/bakers_controller.js')
+app.use('/bakers', bakersController)
+
+// 404 Page
 app.get('*', (req, res) => {
-    res.send('error404')
-  })
+  res.send('404')
+})
+
 
 
   mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true}
