@@ -3,9 +3,9 @@
 const mongoose = require('mongoose')
 const { Schema } = mongoose
 
-// schema
 
-// schema
+
+// Schema
 const bakerSchema = new Schema({
     name: {
         type: String,

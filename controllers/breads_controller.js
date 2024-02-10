@@ -53,7 +53,6 @@ breads.get('/new', (req, res) => {
 
 
 // EDIT
-// EDIT
 breads.get('/:id/edit', (req, res) => {
   Baker.find()
     .then(foundBakers => {

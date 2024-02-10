@@ -24,12 +24,12 @@ app.use(express.urlencoded({extended: true}))
 
 
 // breads
-const breadsControllers = require('./controllers/breads_controller.js')
-app.use('/breads', breadsControllers)
+const breadsController = require('./controllers/breads_controller.js')
+app.use('/breads', breadsController)
 
 // bakers 
-const bakersControllers = require('./controllers/bakers_controller.js')
-app.use('/bakers', bakersControllers)
+const bakersController = require('./controllers/bakers_controller.js')
+app.use('/bakers', bakersController)
 
 // 404 Page
 app.get('*', (req, res) => {
