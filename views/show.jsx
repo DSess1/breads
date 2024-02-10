@@ -23,9 +23,9 @@ function Show ({bread, index}) {
         <form action={`/breads/${index}?_method=DELETE`} method="POST">
           <input type='submit' value="DELETE"/>
        </form>
-        <img src={bread.image} alt={bread.name}/>
-        <p>Baked by {bread.getBakedBy()}</p>
-        <a href={`/breads/${bread.id}/edit`}><button>Edit</button></a>
+        <img src={bread.image} alt={bread.name}/>                        {/* we have now created and used our instance method..(3 step process) */}
+        <p>Baked by {bread.getBakedBy()}</p>                             {/* step 1.breads.js,2.breads/controllers.js   3. show.jsx*/}
+        <a href={`/breads/${bread.id}/edit`}><button>Edit</button></a>     
 
 
       </Default>

@@ -16,9 +16,9 @@ const breadSchema = new Schema({
 
 
 
-// helper methods 
+// helper methods ....Instance method(we need to call it to use it on a returned docoment(we need call it in the controllers/breads_controllers.js in our show route))
 breadSchema.methods.getBakedBy = function(){
-  return `${this.name} was baked with love by ${this.baker}`
+  return `${this.name} was baked with love by ${this.baker}`        // returns a sentence
 }
 
 
