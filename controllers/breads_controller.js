@@ -2,17 +2,16 @@ const express = require('express')
 const breads = express.Router()
 const Bread = require('../models/bread.js')
 
-
-// somewhere at the top with the other dependencies 
+// we have to require the Baker model at the top with the rest of the dependencies.
 const Baker = require('../models/baker.js')
 
 // in the new route
 breads.get('/new', (req, res) => {
-    Baker.find()
-        .then(foundBakers => {
+    Baker.find()                 // Call the .find method on the Baker model so that we get back all bakers.
+        .then(foundBakers => {   // pass the promise callback a variable of foundBakers.
             res.render('new', {
-                bakers: foundBakers
-            })
+                bakers: foundBakers    //Passes the res.render a variable object with a key of bakers and value of foundBakers. 
+            })                         //This will send all the baker data we just found to our new view.
       })
 })
 

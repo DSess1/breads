@@ -1,6 +1,6 @@
 
 
-module.exports = [
+module.exports = [                  //baker seed
     {
       name: 'Monica',
       startDate: '1994-09-22',

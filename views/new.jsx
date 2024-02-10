@@ -1,7 +1,7 @@
 const React = require('react')
 const Default = require('./layouts/default')
 
-function New ({bakers}) {
+function New ({bakers}) {   {/*/Pass the New component an argument of {bakers} so that it accepts the variable we passed it. */}
     return (
       <Default>
         <h2>Add a new bread</h2>
@@ -16,17 +16,12 @@ function New ({bakers}) {
           />       
           <label htmlFor="baker">Baker</label>
           <select name="baker" id="baker">
-             {bakers.map((baker) => {
+             {bakers.map((baker) => {      {/* Map over the bakers array.In the map, return an option element that has a value attribute equal to the current baker's ID, and set its text to the current baker's name.*/}
                 return(
                   <option value={baker.id} key={baker.id}>{baker.name}</option>
                 )
              })}
-            {/*<option value="Rachel">Rachel</option>
-            <option value="Monica">Monica</option>
-            <option value="Joey">Joey</option>
-            <option value="Chandler">Chandler</option>
-            <option value="Ross">Ross</option>
-    <option value="Phoebe">Phoebe</option> */}
+            
           </select>
           <input
             type="text"

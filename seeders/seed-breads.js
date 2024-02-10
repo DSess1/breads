@@ -1,7 +1,7 @@
 const db = require('./models')
 
 
-
+// baker seed data
 db.Bread.Create([
     {
       name: 'Rye',

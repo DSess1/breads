@@ -28,8 +28,11 @@ const breadsController = require('./controllers/breads_controller.js')
 app.use('/breads', breadsController)
 
 // bakers 
-const bakersController = require('./controllers/bakers_controller.js')
-app.use('/bakers', bakersController)
+const bakersController = require('./controllers/bakers_controller.js')// Now that we have the basics of our controller written, we need to point to it in server.js...require and point bakers_controller to bakers.
+app.use('/bakers', bakersController)  //pointing bakers_controller to '/bakers'. Now we can write our seed route, 
+//it will seed the database with our baker seed data and redirect back to the /breads index page.(We do this by going to controllers/bakers_controller.js )
+
+
 
 // 404 Page
 app.get('*', (req, res) => {
