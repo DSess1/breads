@@ -13,6 +13,14 @@ baker.get('/data/seed', (req, res) => {
 })
 
 
+// Index: Baker Index route
+baker.get('/', (req, res) => {
+    Baker.find()
+         .populate('breads')
+        .then(foundBakers => {    // in the promise for .find()..pass through it a callback function with an argument of foundBakers.
+            res.send(foundBakers)
+        })
+})                    
 
 
 // export the baker router..

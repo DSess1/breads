@@ -70,7 +70,7 @@ breads.get('/:id/edit', (req, res) => {
 // SHOW        ...once this method is working(testing the instance method), go to the show page to finish displaying the message on the show page(views/show .js)
 breads.get('/:id', (req, res) => {
   Bread.findById(req.params.id)
-       .populate('baker')
+       .populate('baker')           //Pass the .populate() method an argument of baker.
       .then(foundBread => {// returns a promise(in this case a document..instances only returns documents)
         const bakedBy = foundBread.getBakedBy() //We need to save the string that gets returned to a variable so we can use it.
         console.log(bakedBy)
