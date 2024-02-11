@@ -31,16 +31,19 @@ breads.post('/', (req, res) => {
   })
 
 
-
-// INDEX
+// Index:
 breads.get('/', (req, res) => {
-  Bread.find()
+  Baker.find()
+    .then(foundBakers => {
+      Bread.find()
       .then(foundBreads => {
           res.render('index', {
               breads: foundBreads,
+              bakers: foundBakers,     // we pass another variable called bakers and set it equal to foundBakers.
               title: 'Index Page'
           })
       })
+    })
 })
 
 

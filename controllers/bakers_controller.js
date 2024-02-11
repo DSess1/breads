@@ -22,6 +22,19 @@ baker.get('/', (req, res) => {
         })
 })                    
 
+// Show: Get route for the bakers show page
+baker.get('/:id', (req, res) => {
+    Baker.findById(req.params.id)
+        .populate('breads')    // populatiing breads field
+        .then(foundBaker => {
+            res.render('bakerShow', {    // res.render and have it render bakerShow(the new bakerShow.jsx file)
+                baker: foundBaker       // we will do a res.render to a second argument for the variable's object, give it a variable named baker, and set it equal to foundBaker.
+            })
+        })
+})
+
+
+
 
 // export the baker router..
 module.exports = baker                    
